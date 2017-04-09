@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 const PLAYER_ONE = 'X'
@@ -28,15 +27,14 @@ class App extends Component {
     return(
       <div>
         <h1>Tic Tac Toe</h1>
-        <div>
+        <div className='board'>
           {this.state.board.map((square,index)=>(
-            <div></div>
+            <div className='square' key={index} onClick={()=>this.handleClick(index)}>{this.state.board[index]}</div>
           ))}
         </div>
       </div>
     ) 
   }
-
 }
 
 export default App;
